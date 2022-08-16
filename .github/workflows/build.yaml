@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: ${{ steps.version.outputs.go_version }}
+      - name: Get Loyalsoldier/geosite.dat
+        run: |
+          wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
       - name: Build geosite
         id: build
         env:
